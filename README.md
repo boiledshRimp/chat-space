@@ -30,35 +30,36 @@ Things you may want to cover:
 |password|string |null: false|
 |name|string |null: false|
 ### Association
-- has_many :chatusers
+- has_many :chatgroups, through: :users_chatgroups
 - has_many :chat
+- has_many :users_chatgroups
 
-## chatusersテーブル
+## chatgroupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|chatuser_id|integer|null: false, foreign_key: true|
 |name|string|null: false|
 ### Association
-- belongs_to :users
-- has_many :chat, through: :users_chatusers
+- has_many :chat
+- has_many :users, through: :users_chatgroups
+- has_many :users_chatgroups
 
 ## chatテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|text|
 |user_id|integer|null: false, foreign_key: true|
+|chatuser_id|integer|null: false, foreign_key: true|
 |comment|text|
 ### Association
 - belongs_to :users
-- has_many :chatusers, through: :users_chatusers
+- belongs_to :chatgroups
 
-
-## users_chatusers
+## users_chatgroups
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
-|chatusers_id|integer|null: false, foreign_key: true|
+|chatgroups_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :users
-- belongs_to :chatusers
+- belongs_to :chatgroups
 
