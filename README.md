@@ -22,3 +22,43 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|string |null: false|
+|password|string |null: false|
+|name|string |null: false|
+### Association
+- has_many :chatusers
+- has_many :chat
+
+## chatusersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|chatuser_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
+### Association
+- belongs_to :users
+- has_many :chat, through: :users_chatusers
+
+## chatテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image|text|
+|user_id|integer|null: false, foreign_key: true|
+|comment|text|
+### Association
+- belongs_to :users
+- has_many :chatusers, through: :users_chatusers
+
+
+## users_chatusers
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|chatusers_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :users
+- belongs_to :chatusers
+
