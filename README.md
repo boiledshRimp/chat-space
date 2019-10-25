@@ -23,46 +23,46 @@ Things you may want to cover:
 
 * ...
 
-## usersテーブル
+## userテーブル
 |Column|Type|Options|
 |------|----|-------|
 |email|string |null: false|
 |password|string |null: false|
 |name|string |null: false|
 ### Association
-- has_many :chatgroups, through: :users_chatgroups
-- has_many :chat
-- has_many :users_chatgroups
+- has_many :groups, through: :user_groups
+- has_many :chats
+- has_many :user_groups
 
 
-## chatgroupsテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 ### Association
-- has_many :chat
-- has_many :users, through: :users_chatgroups
-- has_many :users_chatgroups
+- has_many :chats
+- has_many :user, through: :user_groups
+- has_many :user_groups
 
 
-## chatテーブル
+## chatsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|text|
 |user_id|integer|null: false, foreign_key: true|
-|chatuser_id|integer|null: false, foreign_key: true|
+|groups_id|integer|null: false, foreign_key: true|
 |comment|text|
 ### Association
-- belongs_to :users
-- belongs_to :chatgroups
+- belongs_to :user
+- belongs_to :groups
 
 
-## users_chatgroups
+## user_groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
-|chatgroups_id|integer|null: false, foreign_key: true|
+|groups_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :users
-- belongs_to :chatgroups
+- belongs_to :user
+- belongs_to :groups
 
