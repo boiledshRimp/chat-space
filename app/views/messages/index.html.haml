@@ -1,0 +1,77 @@
+.info-box
+  .info-box__notice
+    グループを編集しました。
+
+.wrapper.clearfix
+
+  .chat-side
+  
+    .side-header
+
+      .side-header__box
+
+        %p.side-header__box__user-name 落合孝春
+        
+        %ul.side-header__box__menu
+
+          %li.side-header__box__menu__new-group
+            = link_to "" do
+              %i.fa.fa-edit
+
+          %li.side-header__box__menu__edit-user
+            = link_to "" do
+              %i.fa.fa-cog
+            
+            
+    .groups
+      .group
+        %p.group__group-name 落合グループ
+        %p.group__latest-message テストです
+
+  .chat-main
+    .main-header
+      .main-header__left-box
+        %h2.main-header__left-box
+          落合グループ
+        %ul.main-header__left-box__member-list
+          Member：
+          %li.main-header__left-box__member-list__member sasano
+          %li.main-header__left-box__member-list__member sakura
+                    
+      = link_to "" do
+        .main-header__edit-btn
+          Edit
+    
+    .messages
+    
+      .message{"data-message_id" => ""}
+        .message__upper-info
+          %p.message__upper-info__talker 落合孝春
+          %p.message__upper-info__date 2019/10/21(Mon) 19:19:44
+        %p.message__text test
+        
+      .message{"data-message_id" => ""}
+        .message__upper-info
+          %p.message__upper-info__talker 落合孝春
+          %p.message__upper-info__date 2019/10/21(Mon) 19:19:44
+        %p.message__text test
+
+    .form
+      %form#new_message.new_message{"accept-charset" => "UTF-8", :action => "https://www.yahoo.co.jp/", :enctype => "", :method => "post"}
+        
+        .input-box
+          %input.input-box__text{:id => "", :name => "", :placeholder => "type a message", :type => "text"}/
+          %label.input-box__image{:for => "d-form"}
+            %i.fa.fa-image
+            %input{:id => "d-form", :name => "", :type => "file"}/
+           
+        %input.submit-btn{:name => "commit", :type => "submit", :value => "Send"}/
+
+
+        
+  
+  
+
+
+      
+
