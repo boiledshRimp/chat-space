@@ -1,4 +1,3 @@
-!!!
 .info-box
   .info-box__notice
     グループを編集しました。
@@ -16,12 +15,13 @@
         %ul.side-header__box__menu
 
           %li.side-header__box__menu__new-group
-            %a{href: 'https://www.yahoo.co.jp/'}
+            = link_to "" do
               %i.fa.fa-edit
 
           %li.side-header__box__menu__edit-user
-            %a{href: 'https://www.yahoo.co.jp/'}
+            = link_to "" do
               %i.fa.fa-cog
+            
             
     .groups
       .group
@@ -38,7 +38,7 @@
           %li.main-header__left-box__member-list__member sasano
           %li.main-header__left-box__member-list__member sakura
                     
-      %a{href: 'https://www.yahoo.co.jp/'}
+      = link_to "" do
         .main-header__edit-btn
           Edit
     
