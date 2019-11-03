@@ -1,0 +1,2 @@
+class GroupsexitController < ApplicationController
+end
