@@ -18,7 +18,7 @@ $ex-dark: #434a54;
   display: block;
 }
 
-#d-form{
+#message_image{
   display: none;
 }
 
@@ -46,7 +46,7 @@ $ex-dark: #434a54;
     .chat-side{
       float:left;
       width:300px;
-      color:white;
+      color:#fff;
       .side-header{
         height:100px;
         background:#253141;
@@ -83,13 +83,16 @@ $ex-dark: #434a54;
         height: calc(100vh - 100px);
         background:#2f3e51;
         padding:20px 20px 0px 20px;
+        
         .group{
 
           p.group__group-name{
             font-size:15px;
+            color:white;
           }
           p.group__latest-message{
             font-size:11px;
+            color:white;
           }
 
         }
