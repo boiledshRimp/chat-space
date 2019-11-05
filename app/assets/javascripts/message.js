@@ -1,7 +1,11 @@
+/////重要/////
+
 $(function(){
   function buildHTML(message){
+
+//////////三項演算子//////////
    img = message.image ? `<img src=${message.image} >` : '';
-    
+//////////三項演算子//////////  
       
       var html =
        `<div class="message" data-message-id=${message.id}>
@@ -29,6 +33,7 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
+//////////ルーティングより先にここを見る//////////
     $.ajax({
       url: url,//同期通信でいう『パス』
       type: "POST",//同期通信でいう『HTTPメソッド』
@@ -37,6 +42,9 @@ $(function(){
       processData: false,
       contentType: false
     })
+//////////ルーティングより先にここを見る//////////
+
+////////////////////
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);      
@@ -47,6 +55,7 @@ $(function(){
     .fail(function(){
       alert('error');
     })
+////////////////////
   })
 })
 
