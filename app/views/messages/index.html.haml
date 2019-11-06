@@ -1,6 +1,5 @@
 .info-box
   
-
 .wrapper.clearfix
 
   .chat-side  
@@ -16,8 +15,7 @@
           %li.side-header__box__menu__edit-user
             = link_to edit_user_path(current_user) do
               = fa_icon 'cog', class: 'icon'
-            
-            
+                        
     .groups
       - current_user.groups.each do |group|
         .group
@@ -27,12 +25,8 @@
             %p.group__latest-message
               no message
 
-
-
-
-
   .chat-main
-    .main-header
+    .main-header{"data-group-id": "#{@group.id}" }
       .main-header__left-box
         %h2.main-header__left-box
           = @group.name
@@ -41,10 +35,7 @@
           - @group.users.each do |user|
             %li.main-header__left-box__member-list__member
               = user.name
-          
-      
-
-                    
+                          
       = link_to edit_group_path(@group) do
         .main-header__edit-btn
           Edit
@@ -61,14 +52,3 @@
             = f.file_field :image, id: 'message_image'
         
         = f.submit 'Send', class: 'submit-btn'
-
-          
-
-
-        
-  
-  
-
-
-      
-
