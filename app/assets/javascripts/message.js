@@ -2,7 +2,7 @@
 
 $(function(){
   function buildHTML(message){
-    console.log(message);
+  
 //////////三項演算子//////////
    var img = message.image.url? `<img src=${message.image.url} >` : '';
    
@@ -81,7 +81,7 @@ $(function(){
 
       if(messages !=  ''){
 
-        console.log('success');
+        
         
         //追加するHTMLの入れ物を作る
         var insertHTML = '';
@@ -113,7 +113,7 @@ $(function(){
       })
 
       .fail(function() {
-        console.log('error');
+        alert('error');
       });
 
     }else{
